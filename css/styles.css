@@ -1,0 +1,149 @@
+/*  ================================
+                Golobal Roles
+    ================================ */
+*{
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+}
+
+body{
+    font-family: "Work sans",sans-serif;
+}
+.container{
+    margin-left: auto;
+    margin-right: auto;
+    padding: 15px;
+}
+
+/* Smallest screen */
+
+@media (min-width: 576px) {
+    .container{
+        width: 100%;
+    }
+  }
+
+/* Small screens   */
+@media (min-width: 768px) { 
+    .container{
+        width: 90%;
+    }
+
+}
+/* medium screens */
+@media (min-width: 992px) { 
+    .container{
+        width: 80%;
+    }
+ }
+/* Big screens  */
+@media (min-width: 1200px) {
+
+  }
+
+/*  ================================
+            End of Golobal Roles
+    ================================ */
+
+
+
+/*  ================================
+                Header
+    ================================ */
+
+.header{
+    background-color: #eee;
+}
+
+.header .container{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.header .logo{
+    width: 60px;
+     cursor: pointer;
+}
+
+.header .links{
+    position: relative;
+}
+
+.header .links:hover .menu span:nth-child(2){
+    width: 100%;
+}
+
+.header .links:hover .menu:nth-child(2){
+    width: 100%;
+}
+
+.header .links:hover .menu +ul {/*  on hover next ul to appear */
+    display: block;
+}
+
+.header .links .menu{
+    width: 30px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+}
+
+.header .links .menu span{
+    margin-bottom: 5px;
+    height: 2px;
+    background-color: #333;
+    opacity: 0.7;
+}
+
+.header .links .menu span:first-child{
+    width: 100%;
+}
+
+.header .links .menu span:nth-child(2){
+    transition: 0.3s;
+    width: 60%;
+}
+.header .links .menu span:last-child{
+    width: 100%;
+}
+
+.header .links ul{
+    background-color: #f6f6f6;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    position: absolute;
+    right: 0;
+    min-width: 200px;
+    top: calc(100% + 20px);
+    display: none;
+}
+
+.header .links ul::before{
+    content: "";
+    border-width: 10px;
+    border-style: solid;
+    border-color: transparent transparent #f6f6f6 transparent;
+    position: absolute;
+    top:-20px;
+    right:5px;}
+
+    .header .links ul li a{
+        display: block;
+        color: #333;
+        text-decoration: none;
+        padding: 15px;
+        margin-bottom: 5px;
+        transition: 0.3s;
+    }
+
+    .header .links ul li a:hover{
+        padding-left: 20px;
+    }
+
+    .header .links ul li:not(:last-child) a{
+        border-bottom:1px solid #ddd;
+    }
+/* Header End */
