@@ -1,6 +1,14 @@
 /*  ================================
                 Golobal Roles
     ================================ */
+:root{
+    --main-color:#10bac7;
+    --page-color:#f6f6f6;
+    --secondary-color:#2c4755;
+    --section-padding:60px;
+}
+
+
 *{
     box-sizing: border-box;
     -webkit-box-sizing: border-box;
@@ -46,6 +54,45 @@ body{
             End of Golobal Roles
     ================================ */
 
+/*  ================================
+            General Components
+    ================================ */
+    .special-heading{
+        text-align: center;
+    }
+    
+    .special-heading h2{
+        font-weight: 800;
+        color: #ebeced;
+        margin: 0;
+        font-size: 60px;
+        letter-spacing: -3px;
+    }
+
+
+
+    .special-heading p{
+        color: #797979;
+        font-size: 20px ;
+        margin-top: -20px;
+    }
+
+    @media (min-width: 768px) { 
+        .special-heading h2{
+            font-size: 100px;
+        }
+
+        .special-heading p{
+            margin-top: -30px;
+        }
+
+     }
+
+
+
+/*  ================================
+           End of General Components
+    ================================ */
 
 
 /*  ================================
@@ -53,7 +100,7 @@ body{
     ================================ */
 
 .header{
-    background-color: #eee;
+    background-color:var(--page-color);
 }
 
 .header .container{
@@ -82,6 +129,7 @@ body{
 .header .links:hover .menu +ul {/*  on hover next ul to appear */
     display: block;
 }
+
 
 .header .links .menu{
     width: 30px;
@@ -119,6 +167,7 @@ body{
     min-width: 200px;
     top: calc(100% + 20px);
     display: none;
+    z-index: 1;
 }
 
 .header .links ul::before{
@@ -146,4 +195,388 @@ body{
     .header .links ul li:not(:last-child) a{
         border-bottom:1px solid #ddd;
     }
-/* Header End */
+/*  ================================
+                Header End 
+    ================================ */
+
+/*  ================================
+                Landing
+    ================================ */
+
+    .landing{
+        width: 100%;
+        height: calc(100vh - 54px);
+        background-image: url(../images/landing.jpg);
+        background-size: cover;
+        position: relative;
+    }
+
+    .landing .intro-text{
+        max-width: 320px;
+        position: absolute;
+        padding: 0 15px;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        text-align: center;
+    }
+    .landing .intro-text h1{
+        margin: 0;
+        font-weight: bold;
+        font-size: 50px;
+        color: var(--main-color);
+    }
+
+    .landing .intro-text p{
+        line-height: 1.8;
+        text-align: center;
+    }
+
+
+
+/*  ================================
+                Landing End
+    ================================ */
+/*  ================================
+                Features
+    ================================ */
+
+    .features{
+        background-color:var(--page-color);
+        padding: var(--section-padding) 0;
+    }
+
+    .features .container{
+        display: grid;
+        grid-template-columns: repeat(auto-fill,minmax(300px,1fr));
+        gap: 15px;
+    }
+
+    .features  .feat{
+        padding: 15px;
+        text-align: center;
+    }
+
+    .features  .feat i{
+        color: var(--main-color);
+        font-size: 30px;
+    }
+
+    .features  .feat h3{
+        font-weight: 800;
+    }
+    .features  .feat p{
+        font-size: 16px;
+        line-height: 1.8;
+        color: #777;
+    }
+
+/*  ================================
+                Features End
+    ================================ */
+
+/*  ================================
+                Services
+    ================================ */
+    .services{
+        padding-top: var(--section-padding);
+        padding-bottom: var(--section-padding);
+    }
+
+    .services .services-content{
+        margin-top:100px;
+        display: grid;
+        grid-template-columns: repeat(auto-fill,minmax(300px,1fr));
+        gap: 30px;
+
+    }
+    .services .service-col{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+    }
+
+    .services .service-col .service{
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        height: 45%;
+    }
+
+    .services .service .service-text{
+        flex: 1;
+    }
+
+    .services .service .service-text h3{
+            margin-top: 0;
+    }
+
+    .services .service .service-text p{
+        color: #444;
+        font-weight: 300;
+        line-height: 1.6;
+    }
+    .services .service i{
+        color: var(--main-color);
+        flex-basis: 60px;
+    }
+
+    .services .service-col .service-img{
+        position: relative;
+        text-align: center;
+    }
+    
+    .services .service-col .service-img::before{
+        content: "";
+        background-color:var(--secondary-color);
+        width: 50%;
+        height: 120%;
+        position: absolute;
+        top: -10%;
+        left: 60%;
+        z-index: -1;
+    }
+
+
+    @media (max-width: 1199px) { 
+        .services .service-col .service-img{
+            display: none;
+        }
+
+     }
+
+     @media (min-width:768px){
+        .services .service-col .service{
+            flex-direction: row;
+            text-align: start;
+            height: 45%;
+        }
+     }
+    
+
+
+/*  ================================
+                Services End
+    ================================ */
+
+
+/*  ================================
+                Protfolio
+    ================================ */
+
+    .portfolio{
+        padding-top: var(--section-padding);
+        padding-bottom: var(--section-padding);
+        background-color: var(--page-color);
+    }
+
+    .portfolio .portfolio-content{
+        margin-top:100px;
+        display: grid;
+        grid-template-columns: repeat(auto-fill,minmax(300px,1fr));
+        gap: 30px;
+    }
+
+    .portfolio .portfolio-content .card{
+        background-color: white;
+        border-radius: 5px;
+        box-shadow: 2px 2px 5px #EEE;
+
+    }
+
+    .portfolio .card .card-image{
+        width: 100%s;
+        max-width: 100%;
+        border-radius: 5px 5px 0 0;
+    }
+
+    .portfolio .card .card-info{
+        padding: 20px;
+    }
+
+    .portfolio .card .card-info h3{
+        margin: 0;
+    }
+
+    .portfolio .card .card-info p{
+        color: #777;
+    }
+
+
+
+/*  ================================
+                Protfolio End
+    ================================ */
+
+
+/*  ================================
+                About
+    ================================ */
+    .about{
+        padding-top: var(--section-padding);
+        padding-bottom: var(--section-padding);
+    }
+
+    .about .about-content{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        margin-top: 100px;
+
+    }
+
+    .about .about-content .about-image{
+        flex-basis: 30%;
+        text-align: center;
+        position: relative;
+    }
+
+
+    .about .about-content .about-image::before{
+        content: "";
+        position: absolute;
+        width: 40%;
+        height: 120%;
+        background-color: #797979;
+        top:-10%;
+        left: -10%;
+        z-index: -1;
+    }
+
+    .about .about-content .about-image::after{
+        content: "";
+        position: absolute;
+        width: 40%;
+        height: 80%;
+        border-bottom: 80px var(--main-color) solid;
+        border-left: 80px var(--main-color) solid;
+        top: -10%;
+        right: -40%;
+        z-index: -1
+       
+    }
+
+    .about .about-content .about-text{
+        flex-basis: 50%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+
+
+    }
+
+    .about .about-content .about-text hr{
+        background-color: var(--main-color);
+        width: 50%;
+
+    }
+
+    .about .about-content .about-text p:first-of-type{
+        margin-top: auto;
+        font-weight: 800;
+        line-height: 2;
+
+    }
+    .about .about-content .about-text p:last-of-type{
+        margin-bottom: auto;
+        line-height: 1.8;
+        color: #777;
+
+    }
+
+    @media (max-width: 1199px) { 
+        .about .about-content{
+            flex-direction: column;
+            text-align: center;
+    
+        }
+        .about .about-content .about-image{
+            width: 100%;
+            margin:0 auto;
+        }
+        .about .about-content .about-text{
+            margin-top: 80px;
+        }
+
+        .about .about-content .about-image::before,::after{
+            display: none;
+        }
+     }
+
+
+
+
+
+/*  ================================
+                About End
+    ================================ */
+
+
+/*  ================================
+                Contact
+    ================================ */
+
+    .contact{
+        padding-top: var(--section-padding);
+        padding-bottom: var(--section-padding);
+        background-color: var(--page-color);
+    }
+     .contact .contact-content{
+         margin-top: 100px;
+         text-align: center;
+     }
+
+     .contact .contact-content p{
+         margin-top: 0;
+         margin-bottom: 0;
+         letter-spacing: -2px;
+         font-weight: 800;
+         font-size: 35px;
+         color: var(--secondary-color);
+     }
+     .contact .contact-content a{
+         display: block;
+         margin-top: 15px;
+         font-weight: 800;
+         font-size: 35px;
+         text-decoration: none;
+         color: var(--main-color);
+
+     }
+
+     .contact .contact-content .social{
+         display: flex;
+         justify-content: center;
+         font-size: 16px;
+         margin-top: 20px;
+     }
+
+     .contact .contact-content .social i{
+         margin-left: 20px;
+     }
+
+/*  ================================
+                Contact End
+    ================================ */
+
+
+/*  ================================
+                Footer
+    ================================ */
+
+    .footer{
+        padding: 30px 10px;
+        background-color: var(--secondary-color);
+        color: white;
+        text-align: center;
+
+    }
+
+    .footer span{
+        font-weight: bold;
+        color:var(--main-color) ;
+    }
+
+/*  ================================
+                Footer End
+    ================================ */
